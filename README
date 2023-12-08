@@ -1,0 +1,18 @@
+El script MAZE_AUTO_EXECUTIONS.sh genera 120 laberints, executa DFS i A* sobre cadascún d'ells i deixa el resultat en una fila del fitxer time_measures.csv.
+
+    - El programa "maze_generator" genera laberints en forma de matrius d'enters. 
+        Per canviar el tamany dels  laberints generats cal canviar MAX_ROWS i MAX_COLUMNS al gust.
+        A cada laberint hi ha un punt de la matriu que és 2 i representa la posició inicial per començar a resoldre el laberint. També hi ha un punt igual a 3 que marca el destí o punt final del laberint.
+
+        La sortida de maze_generator és un laberint aleatori seguit de les coordenades dels punts d'inici i final del laberint (els punts amb valors 2 i 3 respectivament), a més de les dimensions del laberint en nombre de files i columnes.
+
+    - Els programes solve_maze_DFS i solve_maze_A_star reben com a parametres el nombre de files i columnes del laberint, els punts d'inici i final (x,y) i el laberint en si, i el resolen amb la seva manera particular.
+
+    - El fitxer time_measures.csv conté el registre de 120 execucions de tots dos algorismes, totes elles amb laberints diferents. Es pot exportar a Google Sheets. Important en les opcions d'importar de Google Sheets indicar que només els tabuladors indiquen separacions i desactivar la casella de convertir a números, dates, etc...
+
+Es pot utilitzar el Makefile per compilar el programa i treure'n l'executable, a més d'altres opcions com per exemple make tar per fer el .tar.
+
+
+PROBLEMES:
+
+    - Alguns laberints no tenen solucions (molt pocs).
