@@ -12,9 +12,11 @@ b <- as.numeric(my_data_frame$`Avg. paths/cell`)
 
 model <- lm(D ~ n + h + b)
 summary(model)
-
+IC_resposta = c(mean(D) - qt(0.975, 119) * sd(D)/sqrt(120), mean(D) + qt(0.975, 119) * sd(D)/sqrt(120))
 IC <- confint(model, level = 0.95)
+
 IC
+IC_resposta
 
 plot(model, c(2,3))
 hist(rstandard(model))
